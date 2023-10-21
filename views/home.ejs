@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/header.ejs") %>
+  <body>
+    <div class="site-title">
+        <img src="logo.png"  style="rotate: -20deg;" alt="logo" />
+        <a href="/"><h3>INSTANT ASSISTANT</h3></a>
+      </div>
+    <div class="container">
+      <div class="content">
+        
+
+        <div class="login">
+          <form  id="login">
+            <input type="email" name="email" placeholder="Email Address"  autocomplete="email" required/>
+
+            <input type="password" name="password" placeholder="Password" autocomplete="current-password" required />
+           
+            <button class="login-btn" type="submit" >Login</button>
+            <button class="register-btn" id="register">Register</button>
+          </form>
+
+          <button class="btn-google" id="google-login-btn">
+            <img src="google.png" width="25px" alt="google_logo" />
+            <p>Sign in With Google</p>
+          </button>
+
+
+        </div>
+      </div>
+       
+      <div class="photo">
+        <img width="370px" src="laptop.png" alt="" />
+      </div>
+     
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+    <script type="module" src="loginController.js"></script>
+  </body>
+</html>
