@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400&display=swap');
+body{
+    max-width: 1200px;
+    background-color: #4F509E;
+
+    margin: 0 auto;
+
+}
+
+h3{
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    color:#FFFFFF; 
+}
+
+a{
+    text-decoration: none;
+}
+* {
+    font-family: 'Outfit','Arial' sans-serif;
+    box-sizing: border-box;
+}
+
+p{
+    font-family: 'Outfit', sans-serif;
+}
+.login-form{
+    background-color: #8080D7;
+} 
+
+.site-title{
+    width: 100%;
+    margin: 150px auto 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+body{
+    margin: 0 auto;
+}
+.container{
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content{
+    width: 400px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:425px){
+    .container{
+   
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .content{
+        margin-left: 0px;
+    }
+    .photo {
+        display: none;
+    }
+}
+
+input::placeholder{
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.login{
+   max-width: 400px;
+   margin: 0 auto;
+}
+.login input{
+    display: block;
+    width:280px;
+    height: 55px;
+    margin: 15px 0;
+    padding: 8px;
+    border: 1px solid #8080D7;
+    border-radius: 10px;
+    background-color:#8080D7;  
+}
+
+.login .btn-google {
+    width:280px;
+    height: 55px;
+    margin: 15px 0;
+    padding: 8px;
+    border: 1px solid #8080D7;
+    border-radius: 10px;
+    background-color:#8080D7;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   cursor: pointer;
+}
+
+.btn-google p{
+  color: #FFFFFF;
+  font-size: 1.2rem;
+ 
+}
+
+.login-btn, 
+.register-btn{
+
+    width:130px;
+    height: 58px;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #8080D7;
+    border-radius: 10px;
+    background-color:#8080D7;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.register input{
+    background-color: #84C6C9;
+}
+
+
+.register-btn{
+    color: black;
+    margin-left: 15px;
+ background-color: transparent;
+}
+
+.photo{
+    width: 400px;
+    margin: 10px ;
+  
+}
+
+.weather{
+    max-width: 1000px;
+
+    margin: 0px auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-info {
+    width:auto;
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-100px);
+}
+.brief-info{
+    width:340px;
+    height: 90px;
+    background-color: #8080D7;
+    border:1px solid #8080D7;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+   
+   }
+   
+   .detail-info{
+    width:340px;
+    height:200px;
+    background-color: #B1D5DC;
+    border:1px solid #8080D7;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-family: 'Outfit';
+   }
+
+
+   .suggestion{
+
+    margin-top: 300px;
+
+    display: flex;
+    flex-direction: row;
+    margin-left: 0px;
+   }
+   .tips{
+    width:300px;
+
+    height:490px;
+
+   
+    background-color: #DFC47D;
+    border:1px solid #8080D7;
+    border-radius: 20px;
+   }
+   
+
+
+@media (max-width:972px){
+    .weather{  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+   .suggestion{
+    margin-top: 30px;
+    transform: translateY(-100px);
+  
+   }    
+
+
+   .clothes{
+    margin-top: 30px;
+}
+}
+
+@media (max-width:595px){
+    .weather{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   .suggestion {
+    flex-direction: column-reverse;
+    transform: translateY(-130px);
+    margin-left: 80px;
+   }
+
+   .tips{
+    width:340px;
+    height:450px;
+   }
+   
+   .brief-info, 
+   .detail-info{
+    margin-left: 50px;
+   }
+
+   .clothes{
+    margin-top: 30px;
+}
+}
+
+
+
+
+.register-form{
+    background-color: #84C6C9;
+}
+
+.clothes-info{
+    background-color: #DFC47D;
+}
+
+.todo {
+    background-color: #DCDADC;
+
+}
+
+/* <!--agenda-- > */
+
+.agenda-wrapper{
+    max-width: 400px;
+    margin: 0 auto;
+}
+input[type=text] {
+    background: #DCDADC;
+}
+input[type=text]:focus{
+    color: #fff;
+    border:none;
+    background: rgba(0,0,0,0.2);
+    max-width: 400px;
+}
+
+.todos li{
+    background: #DCDADC;
+}
+.delete{
+    cursor: pointer;
+}
+
+.filtered{
+    display: none !important;
+}
+
+.nav-link{
+    color: #DCDADC !important;
+}
+
+.profile-link{
+    width: 200px;
+    margin: 10px 10px;
+    padding: 15px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+
+}

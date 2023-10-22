@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/header.ejs") %>
+  <body>
+    <div class="site-title">
+        <img src="logo.png"  style="rotate: -20deg;" alt="logo" />
+        <a href="/"><h3>Welcome connecting with your ASSISTANT</h3></a>
+      </div>
+      <div class="container">
+
+        <div class="photo">
+            <img width="300px" src="folder.png" alt="document" />
+        </div>
+
+      <div class="content" style="margin-left: 0px;">
+        
+          
+           
+          
+            <a href="./weather" class="login-btn profile-link" style="background-color:#84C6C9; color: black;">Weather and Dress</a>
+            <a href="./agenda" class="login-btn profile-link" style="background-color:#84C6C9; color: black;">Check Agenda</a>
+            <a href="" class="register-btn profile-link" id="logout" style="border:1px solid #84C6C9; color:#FFFF; ">Logout</a>
+          
+      
+
+      <p id="userName"></p>
+      <p id="userEmail"></p>
+
+      </div>
+       
+   
+     
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+    <script type="module" src="logoutController.js"></script>
+    
+  </body>
+</html>

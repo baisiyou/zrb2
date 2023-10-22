@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+    
+    <div class="site-title">
+        <img src="hello.png" width="135px" alt="hello" />
+        <a href="/"><h3>REGISTER</h3></a>
+      </div>
+    <div class="container">
+
+        <div class="photo">
+            <img width="300px" src="document.png" alt="document" />
+        </div>
+
+      <div class="content" style="margin-left: 0px;">
+        <div class="login register">
+
+          <form class="signup">
+            <input type="text" name="username" placeholder="Username" autocomplete="username"  required/>
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required/>
+            <input type="password" name="password" placeholder="Password" autocomplete="new-password" required/>
+            <input type="password" name="comfirmPassword" placeholder="Confirm Password" autocomplete="new-password" required/>
+            <button class="login-btn"  type="submit" style="background-color: #84C6C9; color: black;">Sign Up</button>
+            <button class="register-btn" id="loginbutton" style="border:1px solid #84C6C9; color:#FFFF;">Login</button>
+          </form>
+
+        </div>
+      </div>
+       
+   
+     
+    </div>
+
+
+
+ <%- include('./partials/footer.ejs')%>
+
+ <script type="module" src="registerController.js"></script>
+
+</body>
+</html>

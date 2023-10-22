@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <div class="weather">
+      <div class="weather-info">
+        <div class="site-title" style="margin: 130px auto 60px; width: 420px;">
+          <img src="logo.png" style="rotate: -20deg" alt="logo" />
+          <a href="/"><h3>WEATHER OF THE DAY</h3></a>
+        </div>
+        <div class="brief-info">
+          <div class="text">
+            <p style="color:darkred; font-size: 0.9rem; margin-left: 20px; width: max-content;"><%- dateTime %></p>
+            <p style="margin-left: 20px; font-size:1.1rem;font-family: Arial, sans-serif; font-weight: bold;"><span><%- city %>, </span><span><%- country %></span></p>
+          </div>
+          <img style="transform: translate(80px, -100px);"  height="230px" width="230px" src=" https://openweathermap.org/img/wn/<%= icon %>@2x.png" alt="weather-icon">
+        </div>
+        <div class="detail-info">
+          <h2 ><span><%- temp %>&deg;C</span></h2>
+          <p style=" font-weight: 800;">Feels like <%- feels_like %> &deg;C, <%- main %>, <%- description %></p>
+          <p style=" font-weight: 400;"><img width="20px"src="paper-plane.png" alt="windspeed"><span><%- wind %>m/s</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="20px"src="pressure.png" alt="pressure"><span><%= pressure %></span></p>
+          <p style=" font-weight: 400;">Humidity: <span><%- humidity %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visibility: <span><%= (visibility/1000.0).toFixed(1) %> km</span></p>
+        </div>
+      </div>
+      <%  const springMonth = ["Mar","Apr","May"];  %>
+      <% const regex = new RegExp(springMonth.join("|"));%>
+      <% const isSpring = regex.test(dateTime);%>
+      <% if(temp < -10 ){%>
+    <div class="suggestion">
+
+      <div class="tips">
+            <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.winter02.tips  %> </p> 
+      </div>
+
+      <div class="clothes">
+        <img src="<%=clotheData.winter02.image%>" alt="">
+      </div> 
+    </div>
+   <% } else if (temp >=-10 && temp <= 0) {%>
+    <div class="suggestion">
+
+      <div class="tips">
+            <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.winter01.tips  %> </p> 
+      </div>
+
+      <div class="clothes">
+        <img src="<%=clotheData.winter01.image%>" alt="">
+      </div> 
+    </div>
+    <% }else if(temp > 0 && temp < 7){ %>
+      <div class="suggestion">
+
+        <div class="tips">
+              <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.autumn03.tips  %> </p> 
+        </div>
+  
+        <div class="clothes">
+          <img src="<%=clotheData.autumn03.image%>" alt="">
+        </div> 
+      </div>
+    <% }else if(temp >=7 && temp <15 && description.toLowerCase().includes("rain") ) {%>
+      <div class="suggestion">
+
+        <div class="tips">
+              <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.rainyAutumn.tips  %> </p> 
+        </div>
+  
+        <div class="clothes">
+          <img src="<%=clotheData.rainyAutumn.image%>" alt="">
+        </div> 
+      </div>
+
+    <% }else if(temp >=7 && temp <15 && isSpring == true){ %>
+      <div class="suggestion">
+
+        <div class="tips">
+              <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.spring01.tips  %> </p> 
+        </div>
+  
+        <div class="clothes">
+          <img src="<%=clotheData.spring01.image%>" alt="">
+        </div> 
+      </div>
+    
+    <% }else if(temp >=7 && temp <15) {%>
+      <div class="suggestion">
+
+        <div class="tips">
+              <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.autumn01.tips  %> </p> 
+        </div>
+  
+        <div class="clothes">
+          <img src="<%=clotheData.autumn01.image%>" alt="">
+        </div> 
+      </div>
+
+    <% }else if(temp >= 15 && temp < 20 && description.toLowerCase().includes("rain") ) {%>
+      <div class="suggestion">
+
+        <div class="tips">
+              <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.rainyDay.tips  %> </p> 
+        </div>
+  
+        <div class="clothes">
+          <img src="<%=clotheData.rainyDay.image%>" alt="">
+        </div> 
+      </div>
+      <% }else if(temp >=15 && temp < 22) {%>
+        <div class="suggestion">
+
+          <div class="tips">
+                <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.summer01.tips  %> </p> 
+          </div>
+    
+          <div class="clothes">
+            <img src="<%=clotheData.summer01.image%>" alt="">
+          </div> 
+        </div>
+
+        <% }else if(temp >= 22 && temp < 29){%>
+          <div class="suggestion">
+
+            <div class="tips">
+                  <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.summer02.tips  %> </p> 
+            </div>
+      
+            <div class="clothes">
+              <img src="<%=clotheData.summer02.image%>" alt="">
+            </div> 
+          </div>
+        <% }else{%>
+          <div class="suggestion">
+
+            <div class="tips">
+                  <p style="font-weight: 200; padding: 5px 8px;"><%- clotheData.summer03.tips  %> </p> 
+            </div>
+      
+            <div class="clothes">
+              <img src="<%=clotheData.summer03.image%>" alt="">
+            </div> 
+          </div>
+        <% }%>
+       
+  </div>
+    <%- include('./partials/footer.ejs') %>
+
+  </body>
+</html>
